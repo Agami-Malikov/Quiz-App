@@ -3,8 +3,8 @@
 
   &__text {
     position: relative;
-    max-width: 1300px;
-    font-size: 44px;
+    max-width: 800px;
+    font-size: 24px;
     line-height: 1.4;
     margin: 0 auto;
     border: 3px solid #f4f4f4;
@@ -12,27 +12,28 @@
     padding: 20px 40px;
     background-color: #884e22;
     text-transform: uppercase;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
   }
 
   &__text::before,
   &__text::after {
     position: absolute;
     content: '';
-    width: 300px;
-    height: 300px;
+    width: 180px;
+    height: 180px;
     top: 50px;
     transform: rotate(-15deg);
+    background-size: cover;
   }
 
   &__text::before {
     background-image: url(../../assets/logic.png);
-    right: -350px;
-    top: -110px;
+    right: -170px;
+    top: -80px;
   }
 
   &__text::after {
-    left: -390px;
+    left: -198px;
     background-image: url(../../assets/erudition.png);
     transform: rotate(25deg);
   }

@@ -1,14 +1,16 @@
 .about {
   display: flex;
   align-items: center;
-  font-size: 42px;
+  font-size: 24px;
   text-transform: uppercase;
+  margin-bottom: 100px;
 
   &__item {
     position: relative;
-    padding: 80px 80px 80px 290px;
+    padding: 80px 40px 40px 200px;
     border: 10px solid #ffee00;
     background-color: #884e22;
+    height: 300px;
   }
 
   &__item + &__item {
@@ -23,12 +25,12 @@
   &__item:nth-child(2)::before {
     position: absolute;
     content: '';
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     background-repeat: no-repeat;
     background-size: cover;
-    left: 20px;
-    top: 50px;
+    left: 10px;
+    bottom: 50px;
   }
 
   &__item:nth-child(1)::before {

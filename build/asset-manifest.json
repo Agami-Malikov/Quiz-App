@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dc227087.css",
+    "main.js": "/static/js/main.6d798501.js",
+    "static/css/781.daa041a2.chunk.css": "/static/css/781.daa041a2.chunk.css",
+    "static/js/781.86f39048.chunk.js": "/static/js/781.86f39048.chunk.js",
+    "static/js/510.e04a2368.chunk.js": "/static/js/510.e04a2368.chunk.js",
+    "static/js/341.10ff11d8.chunk.js": "/static/js/341.10ff11d8.chunk.js",
+    "static/media/logic.png": "/static/media/logic.05771763470e8acaa304.png",
+    "static/media/bg2.webp": "/static/media/bg2.ddac7b46bf361f9f749c.webp",
+    "static/media/logo.png": "/static/media/logo.61ced967adf98de6f78d.png",
+    "static/media/food.png": "/static/media/food.e24a61dba280004f31aa.png",
+    "static/media/game.png": "/static/media/game.8424aee71207a796f140.png",
+    "static/media/erudition.png": "/static/media/erudition.b5c549fbef19d8bd086e.png",
+    "index.html": "/index.html",
+    "main.dc227087.css.map": "/static/css/main.dc227087.css.map",
+    "main.6d798501.js.map": "/static/js/main.6d798501.js.map",
+    "781.daa041a2.chunk.css.map": "/static/css/781.daa041a2.chunk.css.map",
+    "781.86f39048.chunk.js.map": "/static/js/781.86f39048.chunk.js.map",
+    "510.e04a2368.chunk.js.map": "/static/js/510.e04a2368.chunk.js.map",
+    "341.10ff11d8.chunk.js.map": "/static/js/341.10ff11d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc227087.css",
+    "static/js/main.6d798501.js"
+  ]
+}
