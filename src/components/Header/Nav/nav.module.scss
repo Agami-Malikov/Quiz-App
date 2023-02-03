@@ -1,0 +1,32 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  border: 3px solid #f4f4f4;
+  border-radius: 20px;
+  max-width: 1300px;
+  margin: 0 auto 150px;
+
+  &__item + &__item {
+    margin-left: 70px;
+  }
+}
+
+.link {
+  padding: 0 20px;
+  border-radius: 20px;
+  font-size: 44px;
+  box-shadow: inset 0 0 0 0 #86ac41;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  color: #FFFFFF;
+  box-shadow: inset 200px 0 20px 0 #86ac41;
+}
+
+.link.active {
+  color: #ffffff;
+  background-color: #86ac41;
+}

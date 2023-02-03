@@ -1,0 +1,41 @@
+.about {
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  text-transform: uppercase;
+
+  &__item {
+    position: relative;
+    padding: 80px 80px 80px 290px;
+    border: 10px solid #ffee00;
+    background-color: #884e22;
+  }
+
+  &__item + &__item {
+    margin-left: 80px;
+  }
+
+  &__item:nth-child(2) {
+    border: 10px solid aqua;
+  }
+
+  &__item:nth-child(1)::before,
+  &__item:nth-child(2)::before {
+    position: absolute;
+    content: '';
+    width: 280px;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 20px;
+    top: 50px;
+  }
+
+  &__item:nth-child(1)::before {
+    background-image: url(../../../assets/game.png);
+  }
+
+  &__item:nth-child(2)::before {
+    background-image: url(../../../assets/food.png);
+  }
+}

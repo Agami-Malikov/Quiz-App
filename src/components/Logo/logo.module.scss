@@ -1,0 +1,26 @@
+.logo {
+  padding-top: 80px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  &__img {
+    width: 400px;
+    height: 400px;
+    // width: 100%;
+  }
+
+  &__text {
+    color: #99ed01;
+    font-size: 78px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-style: italic;
+  }
+
+  &__text span {
+    font-style: normal;
+  }
+}
