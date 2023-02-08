@@ -1,0 +1,116 @@
+.form {
+  text-align: end;
+  margin-top: 30px;
+  overflow: hidden;
+  &__input {
+    margin-right: 15px;
+    height: 35px;
+    border-radius: 20px;
+    width: 200px;
+    outline-color: #884e22;
+    border: 3px solid #86ac41;
+    font-size: 18px;
+    padding: 0 15px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #884e22;
+  }
+
+  &__button,
+  &__arrow {
+    background-color: #86ac41;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    transition: all 0.5s;
+  }
+
+  &__button:hover,
+  &__arrow:hover {
+    background-color: #fff;
+    color: #86ac41;
+  }
+
+  &__arrow {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__arrow::before,
+  &__arrow::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 4px;
+    top: 25px;
+    background-color: #fff;
+    transition: all 0.5s;
+    border-radius: 15px;
+  }
+
+  &__arrow::before {
+    left: 9px;
+    transform: rotate(43deg);
+  }
+
+  &__arrow::after {
+    transform: rotate(-43deg);
+    right: 9px;
+  }
+
+  &__arrow:hover::after,
+  &__arrow:hover::before {
+    background-color: #86ac41;
+  }
+
+  &__label {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    margin-right: 75px;
+  }
+
+  &__text {
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    margin-right: 75px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .form__list.active,
+  &__list {
+    display: grid;
+    justify-items: start;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 10px;
+    padding: 20px;
+    max-width: 250px;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: #884e22;
+    transform: translateY(0);
+    transition: all 0.9s;
+  }
+
+  &__list {
+    transform: translateY(-300%);
+    transition: all 0.9s;
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    transform: scale(1.25);
+    background-color: #fff;
+    border-radius: 20px;
+  }
+}

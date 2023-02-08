@@ -1,0 +1,35 @@
+.userList {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 750px;
+
+  &__item {
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 16px;
+    width: 140px;
+    border: 1px solid #fff;
+    border-radius: 3%;
+    max-height: 170px;
+  }
+
+  &__name,
+  &__points,
+  &__rank {
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    background-color: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+    background-color: red;
+    padding: 7px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}

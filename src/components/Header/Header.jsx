@@ -1,4 +1,4 @@
-import Logo from 'components/Logo/Logo';
+import Logo from 'shared/components/Logo/Logo';
 import s from './header.module.scss';
 import Nav from './Nav/Nav';
 
