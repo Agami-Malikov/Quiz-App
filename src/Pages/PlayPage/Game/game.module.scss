@@ -1,0 +1,28 @@
+.questions {
+  margin-top: 15px;
+  text-align: center;
+
+  &__title {
+    border: 3px solid #86ac41;
+    background-color: #884e22;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    grid-gap: 60% 15%;
+    justify-content: center;
+  }
+
+  &__item {
+    align-self: center;
+    font-size: 38px;
+    padding: 10px;
+    border: 3px solid #86ac41;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #884e22;
+  }
+}

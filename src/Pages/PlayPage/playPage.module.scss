@@ -5,12 +5,16 @@
     border: 10px solid #f4f4f4;
     border-radius: 25px;
     height: 100vh;
-    padding: 0 15px;
   }
-
+  
   &__info {
     display: flex;
     justify-content: space-between;
-    max-height: 330px;
+    padding: 0 15px;
+    max-height: 240px;
+  }
+
+  &__box {
+    border-top: 10px solid #f4f4f4;
   }
 }

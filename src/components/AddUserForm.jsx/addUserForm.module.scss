@@ -1,7 +1,7 @@
 .form {
   text-align: end;
   margin-top: 30px;
-  overflow: hidden;
+  
   &__input {
     margin-right: 15px;
     height: 35px;
@@ -100,7 +100,7 @@
   }
 
   &__list {
-    transform: translateY(-300%);
+    transform: translateY(-500%);
     transition: all 0.9s;
   }
 
