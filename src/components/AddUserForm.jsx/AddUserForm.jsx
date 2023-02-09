@@ -69,7 +69,7 @@ const AddUserForm = ({ onSubmit }) => {
         required
       />
 
-      <button className={s.form__button} type="submit">
+      <button className={s.form__button} type="button">
         <span>+</span>
       </button>
 

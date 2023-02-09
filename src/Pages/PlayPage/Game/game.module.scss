@@ -3,17 +3,20 @@
   text-align: center;
 
   &__title {
+    font-size: 42px;
+    font-weight: 600;
     border: 3px solid #86ac41;
     background-color: #884e22;
     border-radius: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 25%);
-    grid-gap: 60% 15%;
+    grid-template-columns: repeat(2, 35%);
+    grid-gap: 50px 25%;
     justify-content: center;
+    margin-bottom: 20px;
   }
 
   &__item {
@@ -24,5 +27,129 @@
     border-radius: 20px;
     cursor: pointer;
     background-color: #884e22;
+    width: 400px;
   }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button,
+  &__Nextbutton,
+  &__endBtn {
+    position: relative;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    border: 3px solid #86ac41;
+    border-radius: 20px;
+    background-color: #86ac41;
+    transition: all 0.5s;
+    margin-left: 50px;
+  }
+
+  &__Nextbutton {
+    width: 185px;
+    margin-left: auto;
+  }
+
+  &__Nextbutton,
+  &__endBtn {
+    margin-right: 50px;
+  }
+
+  &__endBtn {
+    width: 250px;
+  }
+
+  &__button:hover,
+  &__Nextbutton:hover {
+    background-color: #fff;
+    color: #86ac41;
+    border: #fff;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: -60px;
+    top: -19px;
+    background-color: #86ac41;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    transition: all 0.5s;
+  }
+
+  &__Nextarrow {
+    position: absolute;
+    right: -60px;
+    top: -19px;
+    background-color: #86ac41;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    transition: all 0.5s;
+  }
+
+  &__button:hover &__arrow {
+    background-color: #fff;
+  }
+
+  &__Nextbutton:hover &__Nextarrow {
+    background-color: #fff;
+  }
+
+  &__arrow::before,
+  &__arrow::after,
+  &__Nextarrow::before,
+  &__Nextarrow::after {
+    position: absolute;
+    content: '';
+    width: 28px;
+    height: 6px;
+    background-color: #fff;
+    transition: all 0.5s;
+    border-radius: 15px;
+  }
+
+  &__arrow::before {
+    left: 11px;
+    transform: rotate(32deg);
+    top: 34px;
+  }
+
+  &__Nextarrow::before {
+    left: 21px;
+    transform: rotate(-32deg);
+    top: 34px;
+  }
+
+  &__arrow::after {
+    transform: rotate(-32deg);
+    top: 21px;
+    left: 11px;
+  }
+
+  &__Nextarrow::after {
+    transform: rotate(32deg);
+    top: 21px;
+    left: 21px;
+  }
+
+  &__button:hover &__arrow::after,
+  &__button:hover &__arrow::before,
+  &__Nextbutton:hover &__Nextarrow::after,
+  &__Nextbutton:hover &__Nextarrow::before {
+    background-color: #86ac41;
+  }  
 }

@@ -1,21 +1,17 @@
-import s from './game.module.scss';
 import questions from 'data/questions';
+import s from './game.module.scss';
 
-import { useState } from 'react';
-import { computeHeadingLevel } from '@testing-library/react';
+const Game = ({
+  question,
+  onClickVariant,
+  prevQuestion,
+  nextQuestion,
+  step,
+}) => {
 
-// console.log(questions);
+  const lastQuestions = questions.length - 1;
 
-const Game = () => {
-  const [step, setStep] = useState(0);
-
-  const question = questions[step];
-
-  const onClickVariant = idx => {
-    console.log(step, idx);
-    setStep(step +1);
-  };
-
+  
   return (
     <div className="container">
       <div className={s.questions}>
@@ -31,6 +27,34 @@ const Game = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={s.questions__btns}>
+        {step === 0 ? (
+          ''
+        ) : (
+          <button
+            className={s.questions__button}
+            onClick={prevQuestion}
+            type="button"
+          >
+            <span className={s.questions__arrow}></span>
+            Предыдущий Вопрос
+          </button>
+        )}
+        {step !== lastQuestions ? (
+          <button
+            className={s.questions__Nextbutton}
+            onClick={nextQuestion}
+            type="button"
+          >
+            <span className={s.questions__Nextarrow}></span>
+            Следующий Вопрос
+          </button>
+        ) : (
+          <button className={s.questions__endBtn} type="button">
+            Результат
+          </button>
+        )}
       </div>
     </div>
   );
