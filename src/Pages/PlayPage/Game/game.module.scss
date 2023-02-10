@@ -48,6 +48,7 @@
     background-color: #86ac41;
     transition: all 0.5s;
     margin-left: 50px;
+    cursor: pointer;
   }
 
   &__Nextbutton {
@@ -68,7 +69,6 @@
   &__Nextbutton:hover {
     background-color: #fff;
     color: #86ac41;
-    border: #fff;
   }
 
   &__arrow {
@@ -151,5 +151,13 @@
   &__Nextbutton:hover &__Nextarrow::after,
   &__Nextbutton:hover &__Nextarrow::before {
     background-color: #86ac41;
-  }  
+  }
+
+  &__itemCorrect {
+    background-color: green;
+  }
+
+  &__itemInvalid {
+    background-color: red;
+  }
 }

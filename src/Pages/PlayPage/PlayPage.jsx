@@ -5,6 +5,9 @@ import questions from 'data/questions';
 import { addUser } from 'redux/items/items-operations';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import useSound from 'use-sound';
+import fail from '../../assets/sounds/word-quiz/fail.mp3';
+import win from '../../assets/sounds/word-quiz/win.mp3';
 import Game from './Game/Game';
 import Result from './Result/Result';
 
@@ -18,6 +21,9 @@ const PlayPage = () => {
   const [correct, setCorrect] = useState(0);
   const [seconds, setSeconds] = useState(10);
   const [timerActive, setTimerActive] = useState(false);
+  const [timerClass, setTimerClass] = useState(s.game__timer);
+  const [failSound] = useSound(fail);
+  const [winSound] = useSound(win);
 
   useEffect(() => {
     if (seconds > 0 && timerActive) {
@@ -30,15 +36,22 @@ const PlayPage = () => {
   const question = questions[step];
 
   const onClickVariant = idx => {
-    setStep(step + 1);
-
+    setTimerActive(prev => !prev);
     if (idx === question.correct) {
       setCorrect(correct + 1);
+      setTimerClass(`${s.game__timer}  ${s.game__timerValid}`);
+      winSound();
+    } else {
+      setTimerClass(`${s.game__timer}  ${s.game__timerInvalid}`);
+      failSound();
     }
   };
 
   const nextQuestion = () => {
     setStep(step + 1);
+    setSeconds(10);
+    setTimerActive(prev => !prev);
+    setTimerClass(s.game__timer);
   };
 
   const prevQuestion = () => {
@@ -86,7 +99,7 @@ const PlayPage = () => {
                     prevQuestion={prevQuestion}
                     nextQuestion={nextQuestion}
                   />
-                  <div className={s.game__timer}>{seconds}</div>
+                  <div className={timerClass}>{seconds}</div>
                 </>
               ) : (
                 <Result correct={correct} />

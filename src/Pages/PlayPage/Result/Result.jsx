@@ -6,10 +6,10 @@ const Result = ({correct}) => {
     <>
       <p className={s.style}>Конец Раунда</p>
       <p>Отгаданно: {correct} ответов из {questions.length}</p>
-      <p>
+      {/* <p>
         Победитель:
         <span>Поздравляем</span>
-      </p>
+      </p> */}
       <a href="/play">
         Начать новую игру
       </a>

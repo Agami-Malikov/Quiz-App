@@ -8,10 +8,8 @@ const Game = ({
   nextQuestion,
   step,
 }) => {
-
   const lastQuestions = questions.length - 1;
 
-  
   return (
     <div className="container">
       <div className={s.questions}>
@@ -19,6 +17,7 @@ const Game = ({
         <ul className={s.questions__list}>
           {question.variants.map((variant, idx) => (
             <li
+            aria-disabled
               className={s.questions__item}
               key={idx}
               onClick={() => onClickVariant(idx)}
@@ -51,7 +50,11 @@ const Game = ({
             Следующий Вопрос
           </button>
         ) : (
-          <button className={s.questions__endBtn} type="button">
+          <button
+            className={s.questions__endBtn}
+            onClick={nextQuestion}
+            type="button"
+          >
             Результат
           </button>
         )}

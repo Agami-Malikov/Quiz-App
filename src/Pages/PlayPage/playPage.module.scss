@@ -6,7 +6,7 @@
     border-radius: 25px;
     height: 100vh;
   }
-  
+
   &__info {
     display: flex;
     justify-content: space-between;
@@ -80,4 +80,14 @@
     padding-left: 40px;
     border-radius: 50%;
   }
+
+  
+}
+
+.game__timer.game__timerValid {
+  background-color: green;
+}
+
+.game__timer.game__timerInvalid {
+  background-color: red;
 }
