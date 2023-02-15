@@ -6,9 +6,12 @@ import fail from '../../../assets/sounds/word-quiz/fail.mp3';
 import useSound from 'use-sound';
 
 import { useState, useEffect } from 'react';
+import PrevBtn from 'shared/components/PrevBtn/PrevBtn';
+import NextBtn from 'shared/components/NextBtn/NextBtn';
 
-const Game = ({questions}) => {
+const Game = ({ questions }) => {
   const lastQuestions = questions.length - 1;
+
   const [play, setPlay] = useState(false);
   const [step, setStep] = useState(0);
   const [correct, setCorrect] = useState(0);
@@ -17,7 +20,7 @@ const Game = ({questions}) => {
   const [timerClass, setTimerClass] = useState(s.game__timer);
   const [failSound] = useSound(fail);
   const [winSound] = useSound(win);
-console.log(questions);
+
   useEffect(() => {
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1);
@@ -62,26 +65,25 @@ console.log(questions);
     }
   };
 
-  const questionList = questions.map(({ title }, idx) => (
+  const questionList = questions.map(({ title, variants }, idx) => (
     <>
       <h1 className={s.game__title} key={idx}>
         {title}
       </h1>
       <ul className={s.game__list} key={idx + 1}>
-        {questions[step].variants.map((variants, idx) => (
+        {variants.map((variant, idx) => (
           <li
             className={s.game__item}
             key={idx}
             onClick={() => onClickVariant(idx)}
           >
-            {variants}
+            {variant}
           </li>
         ))}
       </ul>
     </>
   ));
 
-  console.log(questionList);
   return (
     <div className="container">
       <div className={s.game}>
@@ -91,24 +93,10 @@ console.log(questions);
           {step === 0 ? (
             ''
           ) : (
-            <button
-              className={s.game__button}
-              onClick={prevQuestion}
-              type="button"
-            >
-              <span className={s.game__arrow}></span>
-              Предыдущий Вопрос
-            </button>
+            <PrevBtn prevQuestion={prevQuestion} text="Предыдущий Вопрос" />
           )}
           {step !== lastQuestions ? (
-            <button
-              className={s.game__Nextbutton}
-              onClick={nextQuestion}
-              type="button"
-            >
-              <span className={s.game__Nextarrow}></span>
-              Следующий Вопрос
-            </button>
+            <NextBtn nextQuestion={nextQuestion} text='Cледующий Вопрос' />
           ) : (
             <button
               className={s.game__endBtn}

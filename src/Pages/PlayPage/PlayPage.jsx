@@ -7,8 +7,7 @@ import { addUser } from 'redux/items/items-operations';
 import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-import GameRoundsPage from 'Pages/GameRoundsPage/GameRoundsPage';
-import Game from './Game/Game';
+import RoundsList from 'shared/components/RoundsList/RoundsList';
 
 const PlayPage = () => {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ const PlayPage = () => {
           <div className="container">
             <div className={s.game__info}>
               <UserList />
-              <GameRoundsPage />
+              <RoundsList />
               <AddUserForm onSubmit={onAddUser} />
             </div>
           </div>
