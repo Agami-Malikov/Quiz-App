@@ -1,0 +1,27 @@
+.result {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__stats {
+    margin-bottom: 45px;
+  }
+
+  &__item + &__item {
+    margin-top: 25px;
+  }
+
+  &__item {
+    padding: 20px;
+    background-color: #86ac41;
+    border-radius: 20px;
+    transition: all 0.5s;
+  }
+
+  &__item:hover {
+    background-color: #fff;
+    color: #86ac41;
+  }
+}

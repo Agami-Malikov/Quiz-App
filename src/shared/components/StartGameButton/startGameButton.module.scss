@@ -1,0 +1,48 @@
+.startBox {
+  text-align: center;
+
+  &__btn {
+    position: relative;
+    border: none;
+    padding: 15px;
+    background-color: #86ac41;
+    border-radius: 40px;
+    color: inherit;
+    font-size: 66px;
+    transition: all 0.5s;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: -270px;
+    left: 80px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #86ac41;
+    transition: all 0.5s;
+  }
+
+  &__icon::before {
+    position: absolute;
+    content: '';
+    top: 55px;
+    left: 100px;
+    border-left: solid 100px #fff;
+    border-bottom: solid 70px transparent;
+    border-top: solid 70px transparent;
+  }
+
+  &__btn:hover {
+    background-color: #fff;
+    color: #86ac41;
+  }
+
+  &__btn:hover &__icon::before {
+    border-left: solid 100px #86ac41;
+  }
+
+  &__btn:hover &__icon {
+    background-color: #fff;
+  }
+}
