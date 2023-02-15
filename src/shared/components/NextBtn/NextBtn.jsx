@@ -3,9 +3,9 @@ import style from '../PrevBtn/prevBtn.module.scss';
 
 const NextBtn = ({ nextQuestion, text }) => {
   return (
-    <button className={style.button} onClick={nextQuestion} type="button">
+    <button className={`${style.button} ${s.button}`} onClick={nextQuestion} type="button">
       {text}
-      <span className={s.button__arrow}></span>
+      <span className={`${style.button__arrow} ${s.button__arrow}`}></span>
     </button>
   );
 };

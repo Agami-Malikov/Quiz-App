@@ -8,9 +8,13 @@ import useSound from 'use-sound';
 import { useState, useEffect } from 'react';
 import PrevBtn from 'shared/components/PrevBtn/PrevBtn';
 import NextBtn from 'shared/components/NextBtn/NextBtn';
+import StartGameButton from 'shared/components/StartGameButton/StartGameButton';
+import Result from '../Result/Result';
+import EndBtn from 'shared/components/EndBtn/EndBtn';
 
 const Game = ({ questions }) => {
   const lastQuestions = questions.length - 1;
+  // console.log(questions[0].correct);
 
   const [play, setPlay] = useState(false);
   const [step, setStep] = useState(0);
@@ -26,7 +30,7 @@ const Game = ({ questions }) => {
       setTimeout(setSeconds, 1000, seconds - 1);
     } else if (seconds === 0) {
       setTimerClass(`${s.game__timer}  ${s.game__timerInvalid}`);
-      // failSound();
+      failSound();
     } else {
       setTimerActive(false);
     }
@@ -45,6 +49,11 @@ const Game = ({ questions }) => {
     setStep(step - 1);
   };
 
+  const endGameBtnHandler = () => {
+    setTimerActive(prev => !prev);
+    setStep(step + 1);
+  };
+
   const startGameHandler = () => {
     setPlay(prev => !prev);
   };
@@ -55,13 +64,14 @@ const Game = ({ questions }) => {
 
   const onClickVariant = idx => {
     setTimerActive(prev => !prev);
-    if (idx === questionList.correct) {
+    const correctAnsv = questions.map(({ correct }) => correct);
+    if (idx === correctAnsv[step]) {
       setCorrect(correct + 1);
       setTimerClass(`${s.game__timer}  ${s.game__timerValid}`);
       winSound();
     } else {
       setTimerClass(`${s.game__timer}  ${s.game__timerInvalid}`);
-      // failSound();
+      failSound();
     }
   };
 
@@ -86,28 +96,44 @@ const Game = ({ questions }) => {
 
   return (
     <div className="container">
-      <div className={s.game}>
-        {questionList[step]}
-        <div className={timerClass}>{seconds}</div>
-        <div className={s.game__btns}>
-          {step === 0 ? (
-            ''
+      {!play ? (
+        <StartGameButton
+          timerHandler={timerHandler}
+          startGameHandler={startGameHandler}
+        />
+      ) : (
+        <div className={s.game}>
+          {step !== questions.length ? (
+            <>
+              {questionList[step]}
+              <div className={timerClass}>{seconds}</div>
+              <div className={s.game__btns}>
+                {step === 0 ? (
+                  ''
+                ) : (
+                  <PrevBtn
+                    prevQuestion={prevQuestion}
+                    text="Предыдущий Вопрос"
+                  />
+                )}
+                {step !== lastQuestions ? (
+                  <NextBtn
+                    nextQuestion={nextQuestion}
+                    text="Cледующий Вопрос"
+                  />
+                ) : (
+                  <EndBtn
+                    endGameBtnHandler={endGameBtnHandler}
+                    text="Результат"
+                  />
+                )}
+              </div>
+            </>
           ) : (
-            <PrevBtn prevQuestion={prevQuestion} text="Предыдущий Вопрос" />
-          )}
-          {step !== lastQuestions ? (
-            <NextBtn nextQuestion={nextQuestion} text='Cледующий Вопрос' />
-          ) : (
-            <button
-              className={s.game__endBtn}
-              onClick={nextQuestion}
-              type="button"
-            >
-              Результат
-            </button>
+            <Result correct={correct} step={step} />
           )}
         </div>
-      </div>
+      )}
     </div>
   );
 };

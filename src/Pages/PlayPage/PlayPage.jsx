@@ -24,9 +24,9 @@ const PlayPage = () => {
           <div className="container">
             <div className={s.game__info}>
               <UserList />
-              <RoundsList />
               <AddUserForm onSubmit={onAddUser} />
             </div>
+              <RoundsList />
           </div>
         </div>
         <Outlet />

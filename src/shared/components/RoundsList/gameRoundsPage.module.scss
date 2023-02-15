@@ -1,0 +1,21 @@
+.roundList {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item + &__item {
+    margin-left: 25px;
+  }
+
+  &__item {
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 34px;
+    box-shadow: inset 0 0 0 0 #86ac41;
+    transition: all 0.8s;
+  }
+
+  &__item:hover {
+    color: #ffffff;
+    box-shadow: inset 200px 0 50px 0 #86ac41;
+  }
+}

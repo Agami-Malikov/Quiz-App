@@ -1,0 +1,33 @@
+.button {
+  text-align: end;
+  margin-left: auto;
+  margin-right: 50px;
+
+  &__arrow {
+    position: absolute;
+    // right: -160px;
+    left: 180px;
+    top: -19px;
+    background-color: #86ac41;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    transition: all 0.5s;
+  }
+
+  &__arrow::before {
+    left: 21px;
+    transform: rotate(-32deg);
+    top: 34px;
+  }
+
+  &__arrow::after {
+    transform: rotate(32deg);
+    top: 21px;
+    left: 21px;
+  }
+}
