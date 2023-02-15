@@ -1,8 +1,6 @@
-import questions from 'data/questions';
-import s from './result.module.scss'
+import s from './result.module.scss';
 
-const Result = ({correct,step}) => {
- 
+const Result = ({ correct, step }) => {
   return (
     <div className={s.result}>
       <h2 className={s.result__title}>Конец Раунда</h2>

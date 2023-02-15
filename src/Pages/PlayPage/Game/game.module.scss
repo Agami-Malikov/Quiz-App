@@ -51,6 +51,11 @@
     padding-left: 10px;
     border-radius: 50%;
   }
+
+  &__details {
+    margin-top: 25px;
+    background-color: #884e22;
+  }
 }
 
 .game__timer.game__timerValid {

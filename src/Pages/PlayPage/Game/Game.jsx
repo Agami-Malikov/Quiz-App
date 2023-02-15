@@ -25,6 +25,8 @@ const Game = ({ questions }) => {
   const [failSound] = useSound(fail);
   const [winSound] = useSound(win);
 
+  const ansverDetails = questions.map(({ details }) => details);
+
   useEffect(() => {
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1);
@@ -39,8 +41,8 @@ const Game = ({ questions }) => {
 
   const nextQuestion = () => {
     setStep(step + 1);
+    setTimerActive(true);
     setSeconds(10);
-    setTimerActive(prev => !prev);
     setTimerClass(s.game__timer);
   };
 
@@ -50,7 +52,7 @@ const Game = ({ questions }) => {
   };
 
   const endGameBtnHandler = () => {
-    setTimerActive(prev => !prev);
+    setTimerActive(false);
     setStep(step + 1);
   };
 
@@ -128,6 +130,7 @@ const Game = ({ questions }) => {
                   />
                 )}
               </div>
+              {seconds === 0 || !timerActive ? <p className={s.game__details}>{ansverDetails[step]}</p> : ''}
             </>
           ) : (
             <Result correct={correct} step={step} />
