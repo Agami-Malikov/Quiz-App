@@ -22,10 +22,12 @@ const Game = ({ questions }) => {
   const [seconds, setSeconds] = useState(10);
   const [timerActive, setTimerActive] = useState(false);
   const [timerClass, setTimerClass] = useState(s.game__timer);
+
   const [failSound] = useSound(fail);
   const [winSound] = useSound(win);
 
   const ansverDetails = questions.map(({ details }) => details);
+  const questionsLength = questions.map(({ variants }) => variants.length);
 
   useEffect(() => {
     if (seconds > 0 && timerActive) {
@@ -77,18 +79,19 @@ const Game = ({ questions }) => {
     }
   };
 
+  const cls =
+    questionsLength[step] === 4 ? s.game__list : s.game__listSingleItem;
+  const clsItem =
+    questionsLength[step] === 4 ? s.game__item : s.game__singleItem;
+
   const questionList = questions.map(({ title, variants }, idx) => (
     <>
       <h1 className={s.game__title} key={idx}>
         {title}
       </h1>
-      <ul className={s.game__list} key={idx + 1}>
+      <ul className={cls} key={idx + 1}>
         {variants.map((variant, idx) => (
-          <li
-            className={s.game__item}
-            key={idx}
-            onClick={() => onClickVariant(idx)}
-          >
+          <li className={clsItem} key={idx} onClick={() => onClickVariant(idx)}>
             {variant}
           </li>
         ))}
@@ -108,7 +111,9 @@ const Game = ({ questions }) => {
           {step !== questions.length ? (
             <>
               {questionList[step]}
+
               <div className={timerClass}>{seconds}</div>
+
               <div className={s.game__btns}>
                 {step === 0 ? (
                   ''
@@ -130,7 +135,11 @@ const Game = ({ questions }) => {
                   />
                 )}
               </div>
-              {seconds === 0 || !timerActive ? <p className={s.game__details}>{ansverDetails[step]}</p> : ''}
+              {seconds === 0 || !timerActive ? (
+                <p className={s.game__details}>{ansverDetails[step]}</p>
+              ) : (
+                ''
+              )}
             </>
           ) : (
             <Result correct={correct} step={step} />

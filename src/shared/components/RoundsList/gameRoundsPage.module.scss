@@ -1,21 +1,22 @@
 .roundList {
-  display: flex;
-  flex-wrap: wrap;
-
-  &__item + &__item {
-    margin-left: 25px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  text-align: center;
 
   &__item {
-    padding: 0 20px;
+    // padding: 0 10px;
+    border: 3px solid #86ac41;
     border-radius: 20px;
-    font-size: 34px;
     box-shadow: inset 0 0 0 0 #86ac41;
     transition: all 0.8s;
   }
 
   &__item:hover {
     color: #ffffff;
-    box-shadow: inset 200px 0 50px 0 #86ac41;
+    box-shadow: inset 380px 0 50px 0 #86ac41;
   }
 }

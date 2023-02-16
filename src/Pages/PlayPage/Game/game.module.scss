@@ -12,7 +12,7 @@
     border: 3px solid #86ac41;
     background-color: #884e22;
     border-radius: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   &__list {
@@ -23,7 +23,14 @@
     margin-bottom: 20px;
   }
 
-  &__item {
+  &__listSingleItem {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  &__item,
+  &__singleItem {
+    text-align: center;
     align-self: center;
     font-size: 38px;
     padding: 10px;
@@ -34,18 +41,26 @@
     width: 400px;
   }
 
+  &__singleItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ada1a1;
+    font-size: 152px;
+    width: 800px;
+    height: 250px;
+  }
+
   &__btns {
     display: flex;
     justify-content: space-between;
   }
 
   &__timer {
-    position: absolute;
-    bottom: 40%;
-    left: 45%;
     font-size: 90px;
     width: 140px;
     height: 140px;
+    margin: 0 auto;
     background-color: #86ac41;
     padding-top: 15px;
     padding-left: 10px;
@@ -53,6 +68,9 @@
   }
 
   &__details {
+    padding: 10px;
+    border: 5px solid #86ac41;
+    border-radius: 20px;
     margin-top: 25px;
     background-color: #884e22;
   }
@@ -65,4 +83,3 @@
 .game__timer.game__timerInvalid {
   background-color: red;
 }
-
